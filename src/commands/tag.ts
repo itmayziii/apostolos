@@ -26,7 +26,7 @@ function tagCommand (argv: Arguments): Promise<void> {
 function tagBuilder (yargs: Argv): Argv {
   return yargs
       .options({
-        'f': {
+        f: {
           alias: 'format',
           demandOption: false,
           type: 'string',
