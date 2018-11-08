@@ -5,7 +5,6 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "npx tsc -p tsconfig-spec.json && npx jasmine --config=jasmine.json",
     "lint": "npx tslint --project tsconfig.json -c tslint.json --fix"
   },
   "author": "",
