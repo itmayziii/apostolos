@@ -5,10 +5,13 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx tsc -p tsconfig-spec.json && npx jasmine --config=jasmine.json"
   },
   "author": "",
   "license": "MIT",
+  "bin": {
+    "apostolos": "./dist/index.js"
+  },
   "devDependencies": {
     "@types/node": "^10.12.3",
     "@types/yargs": "^12.0.1",

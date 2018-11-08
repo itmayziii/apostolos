@@ -1,4 +1,4 @@
-import { Arguments, Options } from 'yargs'
+import { Arguments, Argv } from 'yargs'
 import * as Octokit from '@octokit/rest'
 import octokit from '../octokit'
 
@@ -23,17 +23,19 @@ function tagCommand (argv: Arguments): Promise<void> {
       })
 }
 
-function tagOptions (): { [key: string]: Options } {
-  return {
-    'f': {
-      alias: 'format',
-      demandOption: false,
-      type: 'string',
-      describe: 'Format',
-      nargs: 1,
-      default: 'name'
-    }
-  }
+function tagBuilder (yargs: Argv): Argv {
+  return yargs
+      .options({
+        'f': {
+          alias: 'format',
+          demandOption: false,
+          type: 'string',
+          describe: 'Format',
+          nargs: 1,
+          default: 'name'
+        }
+      })
+      .usage('Usage: $0 <user> <repo>')
 }
 
-export { tagCommand, tagOptions }
+export { tagCommand, tagBuilder }
