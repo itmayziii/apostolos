@@ -2,6 +2,11 @@
   "name": "apostolos",
   "version": "0.1.0",
   "description": "Deployment helper",
+  "homepage": "https://github.com/itmayziii/apostolos#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itmayziii/apostolos"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -9,7 +14,7 @@
     "build": "npx tsc -p tsconfig.json",
     "lint": "npx tslint --project tsconfig.json -c tslint.json --fix"
   },
-  "author": "",
+  "author": "Tommy May <tommymay37@gmail.com> (https://www.fullheapdeveloper.com)",
   "license": "MIT",
   "bin": {
     "apostolos": "./dist/index.js"
