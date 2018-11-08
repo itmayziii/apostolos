@@ -7,8 +7,8 @@
     "type": "git",
     "url": "https://github.com/itmayziii/apostolos"
   },
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare-publish": "npx standard-version",
     "build": "npx tsc -p tsconfig.json",
@@ -17,7 +17,7 @@
   "author": "Tommy May <tommymay37@gmail.com> (https://www.fullheapdeveloper.com)",
   "license": "MIT",
   "bin": {
-    "apostolos": "lib/index.js"
+    "apostolos": "dist/index.js"
   },
   "devDependencies": {
     "@types/node": "^10.12.3",
