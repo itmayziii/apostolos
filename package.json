@@ -17,7 +17,7 @@
   "author": "Tommy May <tommymay37@gmail.com> (https://www.fullheapdeveloper.com)",
   "license": "MIT",
   "bin": {
-    "apostolos": "./dist/index.js"
+    "apostolos": "dist/index.js"
   },
   "devDependencies": {
     "@types/node": "^10.12.3",
