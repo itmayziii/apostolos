@@ -11,7 +11,7 @@ const githubAuthMiddleware: MiddlewareFunction = function (argv: Arguments) {
   try {
     octokit.authenticate({
       type: 'token',
-      token: argv.token
+      token: argv.token || process.env.APOSTOLOS_TOKEN
     })
   } catch (error) {
     console.error('Error: Could not authenticate with Github ', error)
