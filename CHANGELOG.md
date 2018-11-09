@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/itmayziii/apostolos/compare/v0.2.0...v0.3.0) (2018-11-09)
+
+
+### Features
+
+* **tarbal-command:** Added the ability to create a tarbal, but more importantly decompress one ([f88ed1b](https://github.com/itmayziii/apostolos/commit/f88ed1b))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/itmayziii/apostolos/compare/v0.1.7...v0.2.0) (2018-11-09)
 
