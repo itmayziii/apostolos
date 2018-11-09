@@ -15,7 +15,7 @@ const githubAuthMiddleware: MiddlewareFunction = function (argv: Arguments) {
     })
   } catch (error) {
     console.error('Error: Could not authenticate with Github ', error)
-    return
+    process.exit(1)
   }
 
   if (!argv.helpers) {
