@@ -1,9 +1,9 @@
-import { Arguments, Argv } from 'yargs'
+import { Arguments, Argv, CommandModule } from 'yargs'
 import axios from 'axios'
 import * as fs from 'fs'
 import { generateTagTarbalUrl } from '../octokit-helpers'
 
-function tagTarballDownloadCommand (argv: Arguments): Promise<void> {
+function tagTarballDownloadHandler (argv: Arguments): Promise<void> {
   if (!argv._[1] || !argv._[2] || !argv._[3]) {
     console.error('Error: Not enough arguments supplied')
     return process.exit(1)
@@ -46,4 +46,11 @@ function tagTarbalDownloadBuilder (yargs: Argv): Argv {
       })
 }
 
-export { tagTarballDownloadCommand, tagTarbalDownloadBuilder }
+const tagTarbalDownloadCommand: CommandModule = {
+  command: 'tag-tarbal-download',
+  describe: 'Download Github tarbal',
+  builder: tagTarbalDownloadBuilder,
+  handler: tagTarballDownloadHandler
+}
+
+export { tagTarbalDownloadCommand }

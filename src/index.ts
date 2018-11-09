@@ -1,15 +1,24 @@
 #!/usr/bin/env node
 
 import * as yargs from 'yargs'
-import { tagCommand, tagBuilder } from './commands/tag'
-import { tagTarbalUrlBuilder, tagTarbalUrlCommand } from './commands/tag-tarbal-url'
-import { tagTarbalDownloadBuilder, tagTarballDownloadCommand } from './commands/tag-tarbal-download'
+import { tagCommand } from './commands/tag-command'
+import { tagTarbalUrlCommand } from './commands/tag-tarbal-url-command'
+import { tagTarbalDownloadCommand } from './commands/tag-tarbal-download-command'
+import { githubAuthMiddleware } from './middleware/githubAuth-middleware'
 
-const argv = yargs
+const argv: yargs.Arguments = yargs
     .usage('Usage: $0 <command> [options]')
-    .command('tag', 'Get the latest tag from a repository', tagBuilder, tagCommand)
-    .command('tag-tarbal-url', 'Determine Github tarbal URL', tagTarbalUrlBuilder, tagTarbalUrlCommand)
-    .command('tag-tarbal-download', 'Download Github tarbal', tagTarbalDownloadBuilder, tagTarballDownloadCommand)
+    .command(tagCommand)
+    .command(tagTarbalUrlCommand)
+    .command(tagTarbalDownloadCommand)
+    .middleware([
+        githubAuthMiddleware
+    ])
+    .config('c', 'Config file path')
+    .nargs('c', 1)
+    .alias('c', 'config')
+    .string('c')
+    .default('c', 'apostolos-config.json')
     .help('h')
     .alias('h', 'help')
     .argv

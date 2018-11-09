@@ -1,8 +1,7 @@
-import { Arguments, Argv } from 'yargs'
+import { Arguments, Argv, CommandModule } from 'yargs'
 import * as Octokit from '@octokit/rest'
-import octokit from '../octokit'
 
-function tagCommand (argv: Arguments): Promise<void> {
+function tagHandler (argv: Arguments): Promise<void> {
   if (!argv._[1] || !argv._[2]) {
     console.error('Error: Not enough arguments supplied')
     return process.exit(1)
@@ -10,6 +9,7 @@ function tagCommand (argv: Arguments): Promise<void> {
 
   const { format } = argv
   const [command, owner, repo] = argv._
+  const octokit: Octokit = argv.helpers.octokit
   return octokit.repos.getTags({ owner, repo, page: 1, per_page: 1 })
       .then((response: Octokit.Response<Octokit.ReposGetTagsResponseItem[]>) => {
         if (format === 'tarbal') {
@@ -38,4 +38,11 @@ function tagBuilder (yargs: Argv): Argv {
       .usage('Usage: $0 <user> <repo>')
 }
 
-export { tagCommand, tagBuilder }
+const tagCommand: CommandModule = {
+  command: 'tag',
+  describe: 'Get the latest tag from a repository',
+  builder: tagBuilder,
+  handler: tagHandler
+}
+
+export { tagCommand }
