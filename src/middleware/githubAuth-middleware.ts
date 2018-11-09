@@ -2,7 +2,8 @@ import { Arguments, MiddlewareFunction } from 'yargs'
 import * as Octokit from '@octokit/rest'
 
 const githubAuthMiddleware: MiddlewareFunction = function (argv: Arguments) {
-  if (argv._[0] !== 'tag') {
+  const commandWithGithubApi = ['tag', 'tag-tarbal-download']
+  if (!commandWithGithubApi.includes(argv._[0])) {
     return
   }
 
