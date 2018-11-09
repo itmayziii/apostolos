@@ -22,8 +22,8 @@ function tagHandler (argv: Arguments): Promise<void> {
 
         return console.log(response.data[0].name)
       })
-      .catch(() => {
-        console.error('Error: Could not get tags for repo')
+      .catch((error) => {
+        console.error('Error: Could not get tags for repo ', error)
         process.exit(1)
       })
 }
