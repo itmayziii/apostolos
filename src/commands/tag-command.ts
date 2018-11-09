@@ -15,6 +15,11 @@ function tagHandler (argv: Arguments): Promise<void> {
         if (format === 'tarbal') {
           return console.log(response.data[0].tarball_url)
         }
+
+        if (format === 'sha') {
+          return console.log(response.data[0].commit.sha)
+        }
+
         return console.log(response.data[0].name)
       })
       .catch(() => {
@@ -32,7 +37,8 @@ function tagBuilder (yargs: Argv): Argv {
           type: 'string',
           describe: 'Format',
           nargs: 1,
-          default: 'name'
+          default: 'name',
+          choices: ['name', 'tarbal', 'sha']
         }
       })
       .usage('Usage: $0 <user> <repo>')

@@ -37,6 +37,7 @@
   "dependencies": {
     "@octokit/rest": "^15.16.1",
     "axios": "^0.18.0",
+    "targz": "^1.0.1",
     "yargs": "^12.0.2"
   },
   "husky": {

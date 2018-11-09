@@ -4,6 +4,7 @@ import * as yargs from 'yargs'
 import { tagCommand } from './commands/tag-command'
 import { tagTarbalUrlCommand } from './commands/tag-tarbal-url-command'
 import { tagTarbalDownloadCommand } from './commands/tag-tarbal-download-command'
+import { tarbalCommand } from './commands/tarbal-command'
 import { githubAuthMiddleware } from './middleware/githubAuth-middleware'
 
 const argv: yargs.Arguments = yargs
@@ -11,8 +12,9 @@ const argv: yargs.Arguments = yargs
     .command(tagCommand)
     .command(tagTarbalUrlCommand)
     .command(tagTarbalDownloadCommand)
+    .command(tarbalCommand)
     .middleware([
-        githubAuthMiddleware
+      githubAuthMiddleware
     ])
     .config('c', 'Config file path')
     .nargs('c', 1)
