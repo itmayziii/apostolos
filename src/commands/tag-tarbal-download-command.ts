@@ -1,5 +1,5 @@
 import { Arguments, Argv, CommandModule } from 'yargs'
-import axios from 'axios'
+import axios, { AxiosError, AxiosResponse } from 'axios'
 import * as fs from 'fs'
 import { generateTagTarbalUrl } from '../octokit-helpers'
 
@@ -24,8 +24,8 @@ function tagTarballDownloadHandler (argv: Arguments): Promise<void> {
           process.exit(1)
         }
       })
-    }).catch((error) => {
-      reject(console.error('Error: Could not connect to Github', error))
+    }).catch((error: AxiosError) => {
+      reject(console.error(`Error: Bad response from github, ${error.response.status} ${error.response.statusText}`))
       process.exit(1)
     })
   })

@@ -14,7 +14,7 @@ const githubAuthMiddleware: MiddlewareFunction = function (argv: Arguments) {
       token: argv.token || process.env.APOSTOLOS_TOKEN
     })
   } catch (error) {
-    console.error(`Error: Could not authenticate with Github, Status: ${error.response.status}`)
+    console.error('Error: Could not authenticate with Github ', error)
     process.exit(1)
   }
 

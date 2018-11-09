@@ -53,7 +53,7 @@ function tarbalHandler (argv: Arguments): Promise<void> {
     } else {
       targz.compress({ src: path, dest: argv.output }, (error) => {
         if (error) {
-          reject(console.error(`Error: Could not compress file ${path} `, error))
+          reject(console.error(`Error: Could not compress file ${path} ,`, error))
           process.exit(1)
         }
 
