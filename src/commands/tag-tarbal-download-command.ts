@@ -13,7 +13,7 @@ function tagTarballDownloadHandler (argv: Arguments): Promise<void> {
   return new Promise((resolve, reject) => {
     axios.get(generateTagTarbalUrl(owner, repo, tagName), {
       headers: {
-        Authorization: `token ${argv.token}`,
+        Authorization: `token ${argv.token || process.env.APOSTOLOS_TOKEN}`,
         'User-Agent': 'BudgetDumpster'
       },
       responseType: 'arraybuffer'
