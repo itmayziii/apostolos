@@ -5,7 +5,7 @@ import { tagCommand } from './commands/tag-command'
 import { tagTarbalUrlCommand } from './commands/tag-tarbal-url-command'
 import { tagTarbalDownloadCommand } from './commands/tag-tarbal-download-command'
 import { tarbalCommand } from './commands/tarbal-command'
-import { githubAuthMiddleware } from './middleware/githubAuth-middleware'
+import { githubAuthMiddleware } from './middleware/github-auth-middleware'
 
 const argv: yargs.Arguments = yargs
     .usage('Usage: $0 <command> [options]')
