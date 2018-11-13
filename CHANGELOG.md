@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/itmayziii/apostolos/compare/v0.5.0...v0.6.0) (2018-11-13)
+
+
+### Features
+
+* **Template command:** switched from using environment variables for replacement to handlebars, it ([aa38f2a](https://github.com/itmayziii/apostolos/commit/aa38f2a))
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/itmayziii/apostolos/compare/v0.4.4...v0.5.0) (2018-11-13)
 
