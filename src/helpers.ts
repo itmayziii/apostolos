@@ -1,3 +1,5 @@
+import * as fs from 'fs'
+
 function replaceEnvVars (content: string): string {
   const envVarsInContent = content.match(/\$[A-Za-z0-9]+/g)
   if (envVarsInContent) {
@@ -28,4 +30,28 @@ function replaceEnvVars (content: string): string {
   return content
 }
 
-export { replaceEnvVars }
+function readFile (path: fs.PathLike): Promise<string> {
+  return new Promise((resolve, reject) => {
+    fs.readFile(path, 'utf8', (error, fileContents) => {
+      if (error) {
+        return reject(error)
+      }
+
+      resolve(fileContents)
+    })
+  })
+}
+
+function writeFile (path: fs.PathLike, data: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    fs.writeFile(path, data, (error) => {
+      if (error) {
+        return reject(error)
+      }
+
+      resolve()
+    })
+  })
+}
+
+export { replaceEnvVars, readFile, writeFile }
