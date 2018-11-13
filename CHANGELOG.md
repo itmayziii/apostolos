@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/itmayziii/apostolos/compare/v0.4.4...v0.5.0) (2018-11-13)
+
+
+### Features
+
+* **env-replace-command:** Added the env replace command ([a5d8bf4](https://github.com/itmayziii/apostolos/commit/a5d8bf4))
+* **Tests / replace content function:** Added Jasmine for testing and started working on a helper fu ([47d6bf5](https://github.com/itmayziii/apostolos/commit/47d6bf5))
+
+
+
 <a name="0.4.4"></a>
 ## [0.4.4](https://github.com/itmayziii/apostolos/compare/v0.4.3...v0.4.4) (2018-11-10)
 
